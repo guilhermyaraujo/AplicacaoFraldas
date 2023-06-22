@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class AplicacaoFraldas {
     public static void main(String[] args) {
+
+
+
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Informe o peso do bebê: ");
@@ -29,19 +33,16 @@ public class AplicacaoFraldas {
         }
     }
 
-    @org.jetbrains.annotations.NotNull
-    @org.jetbrains.annotations.Contract(pure = true)
+
     public static String calcularMarcaFralda(double peso) {
+        String result = "Mamypoko";
         if (peso <= 4) {
-            return "Huggies";
-        } else if (peso <= 5) {
-            return "Mamypoko";
-        } else if (peso <= 6) {
-            return "Baby sec";
+            result = "Huggies";
+        } else if (!(peso <= 5)) if (peso <= 6) {
+            result = "Baby sec";
         } else if (peso <= 9.5) {
-            return "Pampers";
-        } else {
-            return "Mamypoko";
+            result = "Pampers";
         }
+        return result;
     }
 }
